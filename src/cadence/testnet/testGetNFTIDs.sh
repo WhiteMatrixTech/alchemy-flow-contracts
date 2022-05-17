@@ -117,8 +117,8 @@ Dooverse)
   echo "Dooverse"
   flow scripts execute getNFTIDs.cdc 0x8f4ef32a0ffb99a6 --network testnet
   ;;
-MatrixMarketplaceNFT)
-  echo "MatrixMarketplaceNFT"
+MatrixMarket)
+  echo "MatrixMarket"
   flow scripts execute getNFTIDs.cdc 0x7f3812b53dd4de20 --network testnet
   ;;
 *)

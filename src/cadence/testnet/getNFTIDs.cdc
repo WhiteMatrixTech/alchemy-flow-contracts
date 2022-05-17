@@ -62,7 +62,7 @@ import TheFabricantS2ItemNFT from 0x2a37a78609bba037
 import VnMiss from 0x4fb7700ee1a19c44
 import AADigital from 0x03a4ea61342fcb6c
 import DooverseItems from 0x5ab407dfb3bf35e8
-import MatrixMarketplaceNFT from 0x7f3812b53dd4de20
+import MatrixMarket from 0x7f3812b53dd4de20
 
 pub fun main(ownerAddress: Address): {String: [UInt64]} {
     let owner = getAccount(ownerAddress)
@@ -354,9 +354,9 @@ pub fun main(ownerAddress: Address): {String: [UInt64]} {
     .borrow<&{NonFungibleToken.CollectionPublic}>() {
         ids["Dooverse"] = col.getIDs()
     }
-    if let col = owner.getCapability(MatrixMarketplaceNFT.CollectionPublicPath)
+    if let col = owner.getCapability(MatrixMarket.CollectionPublicPath)
     .borrow<&{NonFungibleToken.CollectionPublic}>() {
-        ids["MatrixMarketplaceNFT"] = col.getIDs()
+        ids["MatrixMarket"] = col.getIDs()
     }
 
     return ids

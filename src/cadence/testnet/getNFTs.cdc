@@ -60,7 +60,7 @@ import TheFabricantS2ItemNFT from 0x2a37a78609bba037
 import VnMiss from 0x4fb7700ee1a19c44
 import AADigital from 0x03a4ea61342fcb6c
 import DooverseItems from 0x5ab407dfb3bf35e8
-import MatrixMarketplaceNFT from 0x7f3812b53dd4de20
+import MatrixMarket from 0x7f3812b53dd4de20
 
 pub struct NFTCollection {
     pub let owner: Address
@@ -207,7 +207,7 @@ pub fun main(ownerAddress: Address, ids: {String:[UInt64]}): [NFTData?] {
                 case "VnMiss": d = getVnMiss(owner: owner, id: id)
                 case "AvatarArt": d = getAvatarArt(owner: owner, id: id)
                 case "Dooverse": d = getDooverseNFT(owner: owner, id: id)
-                case "MatrixMarketplaceNFT": d = getMatrixMarketplaceNFT(owner: owner, id: id)
+                case "MatrixMarket": d = getMatrixMarket(owner: owner, id: id)
                 default:
                     panic("adapter for NFT not found: ".concat(key))
             }
@@ -2693,24 +2693,24 @@ pub fun getDooverseNFT(owner: PublicAccount, id: UInt64): NFTData? {
     )
 }
 
-// https://flow-view-source.com/testnet/account/0x7f3812b53dd4de20/contract/MatrixMarketplaceNFT
-pub fun getMatrixMarketplaceNFT(owner: PublicAccount, id: UInt64): NFTData? {
+// https://flow-view-source.com/testnet/account/0x7f3812b53dd4de20/contract/MatrixMarket
+pub fun getMatrixMarket(owner: PublicAccount, id: UInt64): NFTData? {
     let contract = NFTContractData(
-        name: "MatrixMarketplaceNFT",
+        name: "MatrixMarket",
         address: 0x7f3812b53dd4de20,
-        storage_path: "MatrixMarketplaceNFT.CollectionStoragePath",
-        public_path: "MatrixMarketplaceNFT.CollectionPublicPath",
-        public_collection_name: "NonFungibleToken.CollectionPublic, NonFungibleToken.Receiver, MatrixMarketplaceNFT.MatrixMarketplaceNFTCollectionPublic", // interfaces required for initialization
+        storage_path: "MatrixMarket.CollectionStoragePath",
+        public_path: "MatrixMarket.CollectionPublicPath",
+        public_collection_name: "NonFungibleToken.CollectionPublic, NonFungibleToken.Receiver, MatrixMarket.MatrixMarketCollectionPublic", // interfaces required for initialization
         external_domain: "https://matrixworld.org",
     )
 
     let col= owner
-        .getCapability(MatrixMarketplaceNFT.CollectionPublicPath)
-        .borrow<&{MatrixMarketplaceNFT.MatrixMarketplaceNFTCollectionPublic, NonFungibleToken.CollectionPublic}>()
+        .getCapability(MatrixMarket.CollectionPublicPath)
+        .borrow<&{MatrixMarket.MatrixMarketCollectionPublic, NonFungibleToken.CollectionPublic}>()
         ?? panic("NFT Collection not found")
     if col == nil { return nil }
 
-    let nft = col!.borrowMatrixMarketplaceNFT(id: id)
+    let nft = col!.borrowMatrixMarket(id: id)
     if nft == nil { return nil }
 
     let metadata = nft!.getRawMetadata()
