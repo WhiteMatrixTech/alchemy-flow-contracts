@@ -2729,7 +2729,7 @@ pub fun getMatrixMarket(owner: PublicAccount, id: UInt64): NFTData? {
         token_uri: nil,
         media: [
             NFTMedia(uri: metadata["displayUrl"], mimetype: metadata["displayUrlMediaType"]),
-            NFTMedia(uri: metadata["contentUrl"], mimetype: metadata["contentUrlMediaType"]))
+            NFTMedia(uri: metadata["contentUrl"], mimetype: metadata["contentUrlMediaType"])
         ],
         metadata: rawMetadata
     )
