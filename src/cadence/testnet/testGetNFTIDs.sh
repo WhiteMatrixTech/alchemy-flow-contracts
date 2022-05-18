@@ -119,7 +119,7 @@ Dooverse)
   ;;
 MatrixMarket)
   echo "MatrixMarket"
-  flow scripts execute getNFTIDs.cdc 0x7f3812b53dd4de20 --network testnet
+  flow scripts execute getNFTIDs.cdc 0x9b6f1abcdbf57b65 --network testnet
   ;;
 *)
   echo "Unknown contract"

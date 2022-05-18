@@ -2728,7 +2728,8 @@ pub fun getMatrixMarket(owner: PublicAccount, id: UInt64): NFTData? {
         external_domain_view_url: "https://matrixworld.org/profile",
         token_uri: nil,
         media: [
-            NFTMedia(uri: metadata["image"], mimetype: "image")
+            NFTMedia(uri: metadata["displayUrl"], mimetype: metadata["displayUrlMediaType"]),
+            NFTMedia(uri: metadata["contentUrl"], mimetype: metadata["contentUrlMediaType"]))
         ],
         metadata: rawMetadata
     )

@@ -121,7 +121,7 @@ Dooverse)
   ;;
 MatrixMarket)
   echo "MatrixMarket"
-  flow scripts execute getNFTs.cdc --args-json '[{ "type": "Address", "value": "0x7f3812b53dd4de20" }, { "type": "Dictionary", "value": [{ "key": { "type": "String", "value": "MatrixMarket" }, "value": { "type": "Array", "value": [{ "type": "UInt64", "value": "25" }] } }] }]' --network testnet
+  flow scripts execute getNFTs.cdc --args-json '[{ "type": "Address", "value": "0x9b6f1abcdbf57b65" }, { "type": "Dictionary", "value": [{ "key": { "type": "String", "value": "MatrixMarket" }, "value": { "type": "Array", "value": [{ "type": "UInt64", "value": "5" }] } }] }]' --network testnet
   ;;
 *)
   echo "Unknown contract"
