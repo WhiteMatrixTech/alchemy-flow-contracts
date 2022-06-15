@@ -21,6 +21,10 @@ BarterYard)
   echo "Barter Yard Club"
   flow scripts execute getNFTIDs.cdc 0x4300fc3a11778a9a --network testnet
   ;;
+BarterYardClubWerewolf)
+  echo "Barter Yard Club"
+  flow scripts execute getNFTIDs.cdc 0x195caada038c5806 --network testnet
+  ;;
 NFTContract)
   echo "NFTContract"
   flow scripts execute getNFTIDs.cdc 0x0add010813a8c23f --network testnet
@@ -95,7 +99,7 @@ Owners)
   ;;
 Metaverse)
   echo "Metaverse"
-  flow scripts execute getNFTIDs.cdc 0x161bcffdf67a19bc --network testnet
+  flow scripts execute getNFTIDs.cdc 0x1500efa9e71dcd23 --network testnet
   ;;
 Swaychain)
   echo "Swaychain"
@@ -116,6 +120,22 @@ AvatarArt)
 Dooverse)
   echo "Dooverse"
   flow scripts execute getNFTIDs.cdc 0x8f4ef32a0ffb99a6 --network testnet
+  ;;
+TrartContractNFT)
+  echo "TrartContractNFT"
+  flow scripts execute getNFTIDs.cdc 0x3e100699f7218d1d --network testnet
+  ;;
+SturdyItems)
+  echo "SturdyItems"
+  flow scripts execute getNFTIDs.cdc 0x87ff916f3bbcf518 --network testnet
+  ;;
+TuneGO)
+  echo "TuneGO"
+  flow scripts execute getNFTIDs.cdc 0xb30ec2319df2aa30 --network testnet
+  ;;
+TicalUniverse)
+  echo "TicalUniverse"
+  flow scripts execute getNFTIDs.cdc 0x5511546363e3daa2 --network testnet
   ;;
 MatrixMarket)
   echo "MatrixMarket"
